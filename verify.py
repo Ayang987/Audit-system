@@ -1,7 +1,7 @@
 import hashlib
 import os
 import pickle
-import main
+import run
 
 
 class MerkleNode:
@@ -72,9 +72,6 @@ def verify_merkle_tree(node, re_node):
         # combined_hash = hashlib.sha512(
         #     (node.left.hash_value + (node.right.hash_value if node.right else '')).encode()).hexdigest()
         # print(f"combined_hash={combined_hash}")
-        # re_combined_hash = hashlib.sha512(
-        #     (re_node.left.hash_value + (re_node.right.hash_value if re_node.right else '')).encode()).hexdigest()
-        # print(f"re_combined_hash={re_combined_hash}")
 
         if node.hash_value != re_node.hash_value:
             return False
@@ -96,7 +93,6 @@ def main():
         print("File integrity verification failed.")
         for file in result2:
             print(f"{file} is erro")
-
 
 if __name__ == "__main__":
     main()
