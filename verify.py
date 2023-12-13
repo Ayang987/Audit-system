@@ -1,7 +1,7 @@
 import hashlib
 import os
 import pickle
-import chat_main
+import main
 
 
 class MerkleNode:
